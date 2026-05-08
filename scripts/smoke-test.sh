@@ -17,10 +17,10 @@ check() {
     status=$(curl -o /dev/null -s -w "%{http_code}" --max-time 15 -L "$url")
     if [[ "$status" == "200" ]]; then
         echo "  ✓  $path  ($status)"
-        (( PASS++ ))
+        PASS=1
     else
         echo "  ✗  $path  ($status)  ← FAIL"
-        (( FAIL++ ))
+        FAIL=1
         ERRORS+=("$path → $status")
     fi
 }
@@ -70,10 +70,10 @@ OLD_STATUS=$(curl -o /dev/null -s -w "%{http_code}" --max-time 10 \
     "${BASE}/sites/default/files/assets/docs/IQM-Members-Benefits.pdf")
 if [[ "$OLD_STATUS" == "301" || "$OLD_STATUS" == "302" || "$OLD_STATUS" == "200" ]]; then
     echo "  ✓  /sites/default/files/... → $OLD_STATUS (redirect working)"
-    (( PASS++ ))
+    PASS=1
 else
     echo "  ✗  Drupal URL rewrite → $OLD_STATUS  ← FAIL"
-    (( FAIL++ ))
+    FAIL=1
     ERRORS+=("Drupal URL rewrite → $OLD_STATUS")
 fi
 
