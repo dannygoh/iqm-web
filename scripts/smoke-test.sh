@@ -60,7 +60,16 @@ check "/mrca-consultants-directory"
 
 echo ""
 echo "── Admin & API ───────────────────────────────────────────────────────"
-check "/admin"
+# Admin redirects (307) to /admin/login or /admin/create-first-user — both are correct
+ADMIN_STATUS=$(curl -o /dev/null -s -w "%{http_code}" --max-time 20 "${BASE}/admin")
+if [[ "$ADMIN_STATUS" == "200" || "$ADMIN_STATUS" == "307" || "$ADMIN_STATUS" == "302" ]]; then
+    echo "  ✓  /admin  ($ADMIN_STATUS — redirect to login/create-first-user)"
+    PASS=$((PASS + 1))
+else
+    echo "  ✗  /admin  ($ADMIN_STATUS)  ← FAIL"
+    FAIL=$((FAIL + 1))
+    ERRORS+=("/admin → $ADMIN_STATUS")
+fi
 check "/api/health"
 
 echo ""
@@ -70,7 +79,7 @@ OLD_STATUS=$(curl -o /dev/null -s -w "%{http_code}" --max-time 10 \
     "${BASE}/sites/default/files/assets/docs/IQM-Members-Benefits.pdf")
 if [[ "$OLD_STATUS" == "301" || "$OLD_STATUS" == "302" || "$OLD_STATUS" == "200" ]]; then
     echo "  ✓  /sites/default/files/... → $OLD_STATUS (redirect working)"
-    PASS=1
+    PASS=$((PASS + 1))
 else
     echo "  ✗  Drupal URL rewrite → $OLD_STATUS  ← FAIL"
     FAIL=1
