@@ -40,6 +40,9 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
+    // push: true creates all tables from config on startup (idempotent).
+    // Switch to false and use `payload migrate` once schema is stable.
+    push: true,
   }),
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
