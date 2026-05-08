@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # VPS initial setup for iqm-web
 # Run once as root on a fresh Debian 13 server:
-#   bash <(curl -fsSL https://raw.githubusercontent.com/OWNER/iqm-web/main/scripts/vps-setup.sh)
+#   bash <(curl -fsSL https://raw.githubusercontent.com/dannygoh/iqm-web/main/scripts/vps-setup.sh)
 set -euo pipefail
 
 DOMAIN_STAGING="www2.iqm.org.my"
@@ -80,9 +80,9 @@ certbot certonly --webroot -w /var/www/certbot \
 echo ""
 echo "=== Next steps ==="
 echo "1. Copy docker-compose.prod.yml and nginx.conf to $APP_DIR:"
-echo "   git clone https://github.com/OWNER/iqm-web.git $APP_DIR"
+echo "   git clone https://github.com/dannygoh/iqm-web.git $APP_DIR"
 echo ""
-echo "2. Replace 'OWNER' in docker-compose.prod.yml with your GitHub username."
+echo "2. Replace 'dannygoh' in docker-compose.prod.yml with your GitHub username."
 echo ""
 echo "3. Create $APP_DIR/.env from .env.example with production values."
 echo ""

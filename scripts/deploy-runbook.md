@@ -12,7 +12,7 @@
 ## Step 1 — Initial VPS setup (run once as root)
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/OWNER/iqm-web/main/scripts/vps-setup.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/dannygoh/iqm-web/main/scripts/vps-setup.sh)
 ```
 
 This installs Docker, Nginx, Certbot, and configures the firewall.
@@ -22,11 +22,11 @@ This installs Docker, Nginx, Certbot, and configures the firewall.
 ## Step 2 — Clone the repository and create `.env`
 
 ```bash
-git clone https://github.com/OWNER/iqm-web.git /opt/iqm-web
+git clone https://github.com/dannygoh/iqm-web.git /opt/iqm-web
 cd /opt/iqm-web
 
-# Edit docker-compose.prod.yml: replace OWNER with your GitHub username
-sed -i 's|OWNER|<your-github-username>|g' docker-compose.prod.yml
+# Edit docker-compose.prod.yml: replace dannygoh with your GitHub username
+sed -i 's|dannygoh|<your-github-username>|g' docker-compose.prod.yml
 
 # Create .env from example
 cp .env.example .env
@@ -102,7 +102,7 @@ Actions → Build & Deploy → Run workflow
 ```
 
 The workflow will:
-1. Build the Docker image and push to `ghcr.io/OWNER/iqm-web`
+1. Build the Docker image and push to `ghcr.io/dannygoh/iqm-web`
 2. SSH to VPS and run `docker compose pull && up -d`
 3. App is available at `https://www2.iqm.org.my`
 

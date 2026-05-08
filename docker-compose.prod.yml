@@ -1,7 +1,7 @@
 services:
   app:
     # Image tag is pinned by the deploy workflow (sed replaces this line)
-    image: ghcr.io/OWNER/iqm-web:latest
+    image: ghcr.io/dannygoh/iqm-web:latest
     ports:
       - "127.0.0.1:3000:3000"     # bind to loopback only — Nginx proxies from outside
     env_file: .env
