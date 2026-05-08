@@ -44,8 +44,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static    ./.next/static
 
-# Ensure upload directories exist (runtime volumes mount over these)
-RUN mkdir -p ./public/files ./public/media \
+# Ensure upload directories exist and are owned by nextjs so mounted volumes
+# inherit the correct uid (1001) when Docker creates them on first run.
+RUN mkdir -p ./public/files ./public/media ./public/images \
  && chown -R nextjs:nodejs ./public
 
 USER nextjs
