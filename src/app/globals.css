@@ -1,3 +1,6 @@
+/* Site-level globals — imported by (site)/layout.tsx only.
+   Admin routes use Payload's own CSS; this file is never loaded for /admin. */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -5,11 +8,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* IQM brand fonts */
   --font-sans: var(--font-inter);
   --font-display: var(--font-display);
 
-  /* IQM Colour Palette — Tailwind utility tokens */
+  /* IQM Colour Palette — Tailwind tokens */
   --color-primary:       #0f2b5b;
   --color-primary-light: #1a3f7a;
   --color-accent:        #c9922a;
@@ -18,7 +20,7 @@
   --color-muted:         #6b7280;
   --color-border:        #e5e7eb;
 
-  /* Wire shadcn tokens */
+  /* Shadcn token wiring */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -34,7 +36,6 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
-/* Shadcn :root — overridden with IQM palette */
 :root {
   --background: #ffffff;
   --foreground: #111827;
@@ -42,18 +43,18 @@
   --card-foreground: #111827;
   --popover: #ffffff;
   --popover-foreground: #111827;
-  --primary:          #0f2b5b;
+  --primary:            #0f2b5b;
   --primary-foreground: #ffffff;
-  --secondary:        #f1f5f9;
+  --secondary:          #f1f5f9;
   --secondary-foreground: #0f2b5b;
-  --muted:            #f8f9fc;
-  --muted-foreground: #6b7280;
-  --accent:           #c9922a;
-  --accent-foreground: #ffffff;
+  --muted:              #f8f9fc;
+  --muted-foreground:   #6b7280;
+  --accent:             #c9922a;
+  --accent-foreground:  #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
-  --border:           #e5e7eb;
-  --input:            #e5e7eb;
-  --ring:             #1a3f7a;
+  --border:             #e5e7eb;
+  --input:              #e5e7eb;
+  --ring:               #1a3f7a;
   --radius: 0.5rem;
 }
 

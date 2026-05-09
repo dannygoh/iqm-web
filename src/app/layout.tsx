@@ -1,42 +1,11 @@
-import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { DM_Serif_Display, Inter } from 'next/font/google'
-import { cn } from '@/lib/utils'
-import './globals.css'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const dmSerifDisplay = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-display',
-  display: 'swap',
-})
-
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Institute of Quality Malaysia',
-    default: 'Institute of Quality Malaysia',
-  },
-  description:
-    'IQM is a professional membership body for quality practitioners in Malaysia.',
-}
-
+// Root layout is intentionally a passthrough — each route group provides its own
+// <html><body> structure:
+//   - (site)/layout.tsx  → IQM-themed html/body
+//   - (payload)/admin/layout.tsx  → Payload's RootLayout (has its own html/body)
+// Without this, Payload's RootLayout creates a nested <html> inside our <html>,
+// which breaks CSS cascade and causes React hydration error #418.
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html
-      lang="en"
-      className={cn(
-        inter.variable,
-        dmSerifDisplay.variable,
-        'h-full antialiased',
-      )}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  )
+  return children as React.ReactElement
 }

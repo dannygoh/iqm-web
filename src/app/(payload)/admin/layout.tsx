@@ -3,7 +3,7 @@ import { RootLayout } from '@payloadcms/next/layouts'
 import config from '@payload-config'
 import { importMap } from './importMap.js'
 import { serverFn } from './serverFunctions'
-import './admin.css'
+// No IQM CSS here — admin routes use Payload's own CSS exclusively
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
