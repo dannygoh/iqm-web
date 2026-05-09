@@ -3,6 +3,7 @@ import { RootLayout } from '@payloadcms/next/layouts'
 import config from '@payload-config'
 import { importMap } from './importMap.js'
 import { serverFn } from './serverFunctions'
+import './admin.css'
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
