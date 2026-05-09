@@ -62,7 +62,7 @@ export function Header() {
             alt="IQM Logo"
             width={48}
             height={48}
-            className="h-10 w-auto"
+            className="h-10 w-auto mix-blend-screen"
             priority
           />
           <span className="text-white font-display text-base leading-tight hidden sm:block">
