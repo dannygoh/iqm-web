@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 import { DocumentList } from '@/components/blocks/DocumentList'
 
-export const metadata: Metadata = {
-  title: 'MRCA Quality System Consultants Registration Scheme',
-  description:
-    'Apply to register as a certified quality system consultant under the MRCA QSCRS programme.',
-}
+export const metadata: Metadata = pageMetadata(
+  'MRCA Quality System Consultants Registration Scheme',
+  'Apply to register as a certified quality system consultant under the MRCA QSCRS programme.',
+)
 
 const DOCUMENTS = [
   {

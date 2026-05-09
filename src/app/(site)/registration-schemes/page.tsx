@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import { PageHero } from '@/components/blocks/PageHero'
 import { ArrowRight } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'MRCA Registration Schemes',
-  description:
-    'The Malaysian Register of Certified Auditors (MRCA) quality system auditor and consultant registration schemes.',
-}
+export const metadata: Metadata = pageMetadata(
+  'MRCA Registration Schemes',
+  'The Malaysian Register of Certified Auditors (MRCA) quality system auditor and consultant registration schemes.',
+)
 
 export default function RegistrationSchemesPage() {
   return (

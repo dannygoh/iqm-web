@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import { PageHero } from '@/components/blocks/PageHero'
 import { DocumentList } from '@/components/blocks/DocumentList'
 import { ArrowRight } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Download Application Forms',
-  description: 'Download IQM membership and MRCA registration application forms.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Download Application Forms',
+  'Download IQM membership and MRCA registration application forms.',
+)
 
 const MEMBERSHIP_FORMS = [
   {

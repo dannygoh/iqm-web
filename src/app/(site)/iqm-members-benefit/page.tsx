@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import { PageHero } from '@/components/blocks/PageHero'
 import { Check, Download } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: "IQM Members' Benefits",
-  description: 'Benefits of membership at the Institute of Quality Malaysia.',
-}
+export const metadata: Metadata = pageMetadata(
+  "IQM Members' Benefits",
+  "Benefits of membership at the Institute of Quality Malaysia.",
+)
 
 const BENEFITS = [
   'Access to IQM events, seminars, and professional development programmes',

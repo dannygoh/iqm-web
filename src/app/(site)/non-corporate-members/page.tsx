@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import { PageHero } from '@/components/blocks/PageHero'
 import { MembershipTierCard } from '@/components/blocks/MembershipTierCard'
 import { ArrowRight } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Non-Corporate Members',
-  description: 'Affiliate and Student membership at the Institute of Quality Malaysia.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Non-Corporate Members',
+  'Affiliate and Student membership at the Institute of Quality Malaysia.',
+)
 
 export default function NonCorporatePage() {
   return (

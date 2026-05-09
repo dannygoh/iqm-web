@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 
-export const metadata: Metadata = {
-  title: 'About IQM',
-  description:
-    'Learn about the Institute of Quality Malaysia — our history, mission, and commitment to promoting quality excellence.',
-}
+export const metadata: Metadata = pageMetadata(
+  'About IQM',
+  'Learn about the Institute of Quality Malaysia — our history, mission, and commitment to promoting quality excellence.',
+)
 
 export default function AboutPage() {
   return (

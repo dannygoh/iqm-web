@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import { ArrowRight, Users, ClipboardList, BookOpen, Phone } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Institute of Quality Malaysia',
-  description:
-    'IQM is a professional membership body for quality practitioners in Malaysia, promoting quality excellence across industry and government.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Institute of Quality Malaysia',
+  'IQM is a professional membership body for quality practitioners in Malaysia, promoting quality excellence across industry and government.',
+)
 
 const QUICK_LINKS = [
   {

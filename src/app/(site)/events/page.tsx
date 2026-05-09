@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 import { getPayloadClient } from '@/lib/payload'
 import { Calendar, MapPin } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Events',
-  description: 'Upcoming IQM events, seminars, and professional development programmes.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Events',
+  'Upcoming IQM events, seminars, and professional development programmes.',
+)
 
 export const revalidate = 3600 // revalidate hourly
 

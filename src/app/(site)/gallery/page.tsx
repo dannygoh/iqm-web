@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PageHero } from '@/components/blocks/PageHero'
@@ -6,10 +7,10 @@ import { getPayloadClient } from '@/lib/payload'
 import { STATIC_ALBUMS, type StaticAlbum } from '@/lib/gallery-static'
 import { ImageIcon } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Gallery',
-  description: 'Photo gallery from IQM events and activities.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Gallery',
+  'Photo gallery from IQM events and activities.',
+)
 
 export const revalidate = 3600
 

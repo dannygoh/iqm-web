@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 import { ContactForm } from '@/components/blocks/ContactForm'
 import { MapPin, Phone, Mail, Printer } from 'lucide-react'
 import Script from 'next/script'
 
-export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with the Institute of Quality Malaysia secretariat.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Contact Us',
+  'Get in touch with the Institute of Quality Malaysia secretariat.',
+)
 
 export default function ContactPage() {
   return (

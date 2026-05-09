@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 import { MembersTable } from '@/components/blocks/MembersTable'
 import { getPayloadClient } from '@/lib/payload'
 
-export const metadata: Metadata = {
-  title: 'Members Directory',
-  description: 'Search and browse the register of active Institute of Quality Malaysia members.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Members Directory',
+  'Search and browse the register of active Institute of Quality Malaysia members.',
+)
 
 export const dynamic = 'force-dynamic'
 

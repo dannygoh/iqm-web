@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 import { FileText, Download } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Rules & Constitution',
-  description:
-    'The Rules and Constitution of the Institute of Quality Malaysia, approved by the membership.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Rules & Constitution',
+  'The Rules and Constitution of the Institute of Quality Malaysia, approved by the membership.',
+)
 
 export default function RulesPage() {
   return (

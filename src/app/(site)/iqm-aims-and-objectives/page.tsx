@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 
-export const metadata: Metadata = {
-  title: 'Aims & Objectives',
-  description:
-    'The aims and objectives of the Institute of Quality Malaysia — promoting quality advancement, education, and professional development.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Aims & Objectives',
+  'The aims and objectives of the Institute of Quality Malaysia — promoting quality advancement, education, and professional development.',
+)
 
 const AIMS = [
   {

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 import { PageHero } from '@/components/blocks/PageHero'
 import { FeeTable } from '@/components/blocks/FeeTable'
 import { ArrowRight } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Entrance Fee & Annual Subscriptions',
-  description: 'Fee schedule for IQM membership — entrance fees and annual subscriptions by membership category.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Entrance Fee & Annual Subscriptions',
+  'Fee schedule for IQM membership — entrance fees and annual subscriptions by membership category.',
+)
 
 const FEES = [
   { memberType: 'Company Member', entranceFee: '10.00', annualSubscription: '200.00' },

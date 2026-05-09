@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/metadata'
 import { PageHero } from '@/components/blocks/PageHero'
 
-export const metadata: Metadata = {
-  title: 'Board of Management',
-  description: 'The current Board of Management of the Institute of Quality Malaysia.',
-}
+export const metadata: Metadata = pageMetadata(
+  'Board of Management',
+  'The current Board of Management of the Institute of Quality Malaysia.',
+)
 
 type BoardMember = { name: string; credentials?: string }
 
