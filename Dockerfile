@@ -1,20 +1,21 @@
 FROM node:22-alpine AS base
-
-# ── deps: install production + dev deps ──────────────────────────────────────
-FROM base AS deps
 RUN apk add --no-cache libc6-compat
+
+# ── deps: production-only node_modules ───────────────────────────────────────
+FROM base AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+# ── builder: full deps + Next.js build ───────────────────────────────────────
+FROM base AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# ── builder: compile the Next.js app ─────────────────────────────────────────
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Dummy credentials for build-time only (withPayload generates importmap/types,
-# does NOT need a live DB; static pages gracefully degrade to empty state).
+# Dummy build-time credentials (Payload generates importmap/types; no live DB needed)
 ARG DATABASE_URI=postgresql://iqm:build@localhost:5432/iqm_db
 ARG PAYLOAD_SECRET=build-time-secret-not-used-in-production
 ARG NEXT_PUBLIC_SITE_URL=https://www.iqm.org.my
@@ -27,7 +28,9 @@ ENV NODE_ENV=production
 
 RUN npm run build
 
-# ── runner: minimal production image ─────────────────────────────────────────
+# ── runner: production image ──────────────────────────────────────────────────
+# Uses full node_modules (not standalone) so Payload's React.cache-based admin
+# routing can load @payloadcms/* packages from node_modules correctly.
 FROM base AS runner
 WORKDIR /app
 
@@ -39,17 +42,21 @@ ENV HOSTNAME=0.0.0.0
 RUN addgroup --system --gid 1001 nodejs \
  && adduser  --system --uid 1001 nextjs
 
-# Static files from build
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static    ./.next/static
+# Copy production node_modules (no devDeps)
+COPY --from=deps    --chown=nextjs:nodejs /app/node_modules ./node_modules
+# Copy Next.js build output and app files
+COPY --from=builder --chown=nextjs:nodejs /app/.next        ./.next
+COPY --from=builder --chown=nextjs:nodejs /app/public       ./public
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/next.config.ts ./next.config.ts
+COPY --from=builder --chown=nextjs:nodejs /app/src/migrations ./src/migrations
 
-# Ensure upload directories exist and are owned by nextjs so mounted volumes
-# inherit the correct uid (1001) when Docker creates them on first run.
-RUN mkdir -p ./public/files ./public/media ./public/images \
- && chown -R nextjs:nodejs ./public
+# Ensure upload dirs are owned by nextjs
+RUN mkdir -p public/files public/media \
+ && chown -R nextjs:nodejs public
 
 USER nextjs
 
 EXPOSE 3000
-CMD ["node", "server.js"]
+
+CMD ["node_modules/.bin/next", "start"]

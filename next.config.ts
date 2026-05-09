@@ -2,7 +2,8 @@ import type { NextConfig } from 'next'
 import { withPayload } from '@payloadcms/next/withPayload'
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
+  // Note: output:'standalone' is intentionally omitted — Payload v3's React.cache-based
+  // admin routing is incompatible with Next.js standalone bundling.
   images: {
     remotePatterns: [
       // Allow images served from the same VPS (Payload uploads via Nginx)
