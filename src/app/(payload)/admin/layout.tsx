@@ -1,17 +1,13 @@
 import type { ReactNode } from 'react'
-import type { ServerFunctionClient } from 'payload'
 import { RootLayout } from '@payloadcms/next/layouts'
-import { handleServerFunctions } from '@payloadcms/next/layouts'
 import config from '@payload-config'
 import { importMap } from './importMap.js'
+import { serverFn } from './serverFunctions'
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
-    <RootLayout
-      config={config}
-      importMap={importMap}
-      serverFunction={handleServerFunctions as unknown as ServerFunctionClient}
-    >
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    <RootLayout config={config} importMap={importMap} serverFunction={serverFn as any}>
       {children}
     </RootLayout>
   )
