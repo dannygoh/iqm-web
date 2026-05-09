@@ -227,24 +227,24 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 
 ## 9. Build Phases & Checklist
 
-### Phase 0 — Data Extraction
-- [ ] Run `ddev export-db` in `iqm-upgrade-live`, save SQL dump
-- [ ] Copy `web/sites/default/files/` directory (PDFs, images)
-- [ ] Write Node.js migration script: parse SQL dump → seed Members, Auditors, Consultants tables
-- [ ] Catalogue all PDF/document assets, map to Document categories
+### Phase 0 — Data Extraction ✅
+- [x] Run `ddev export-db` in `iqm-upgrade-live`, save SQL dump
+- [x] Copy `web/sites/default/files/` directory (PDFs, images)
+- [x] Write Node.js migration script: parse SQL dump → seed Members, Auditors, Consultants tables
+- [x] Catalogue all PDF/document assets, map to Document categories
 
 ### Phase 1 — Project Scaffold
 - [x] `npx create-next-app@latest iqm-web` with TypeScript + Tailwind + App Router + src dir
 - [x] Install and configure Payload CMS v3 (embedded)
 - [x] Install and configure Drizzle ORM + `drizzle-kit`
 - [x] Define Drizzle schema for Members, Auditors, Consultants
-- [ ] Generate and run initial migration
+- [x] Generate and run initial migration (done via migration container on VPS)
 - [x] Write `docker-compose.yml` (app + postgres)
 - [x] Write `Dockerfile` for production Next.js build
 - [x] Set up `.env.example` with all required env vars
 - [x] Configure Payload collections and globals (as per Section 5)
 - [x] Configure Payload RBAC: admin and editor roles
-- [ ] Verify `/admin` login works locally (requires running Postgres)
+- [x] Verify `/admin` login works (live on VPS)
 
 ### Phase 2 — Design System
 - [x] Define Tailwind v4 CSS variables (navy + gold tokens from Section 8)
@@ -286,7 +286,7 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 - [x] MRCA Auditors Directory (`/mrca-auditors-directory`) — filter by grade, paginate
 - [x] MRCA Consultants Directory (`/mrca-consultants-directory`) — text search, paginate
 - [x] Migration script (`scripts/migrate.ts`) — extracts 759 members, 182 auditors, 122 consultants from Drupal dump
-- [ ] Seed all three tables (run `npm run migrate` once DB is live)
+- [x] Seed all three tables — 759 members, 182 auditors, 122 consultants (done)
 
 ### Phase 5 — Interactive Features
 - [x] Contact form API route → Nodemailer
@@ -311,7 +311,7 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 - [x] All 28 smoke test checks passing
 - [x] Key Payload v3 fixes: admin layout.tsx with RootLayout + serverFunctions.ts ('use server'), no standalone mode, Next.js 15.4.11
 - [x] Seed directory data: 759 members, 182 auditors, 122 consultants seeded via migration container
-- [ ] Share `www2.iqm.org.my` with client for approval
+- [x] Share `www2.iqm.org.my` with client for approval — **STAGING COMPLETE, AWAITING CLIENT SIGN-OFF**
 
 ### Phase 7 — Production Cutover
 - [x] `nginx-production.conf` — `www.iqm.org.my` + bare `iqm.org.my` redirect, HSTS includeSubDomains, all security headers
@@ -330,7 +330,7 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 - [x] Site layout exports title template `'%s | Institute of Quality Malaysia'`
 - [x] `next-sitemap` — generates `sitemap.xml` + `robots.txt` on every build (postbuild script)
 - [x] `robots.txt` — disallows `/admin` and `/api`; all site pages indexed
-- [x] Admin logo blend — `mix-blend-mode: screen` so logo sits cleanly on navy header
+- [x] Admin logo — white badge container so IQM logo is clearly visible on dark navy header
 - [x] `sharp` installed — Media collection image resizing now works
 - [x] Payload email adapter — `@payloadcms/email-nodemailer` wired from `.env` SMTP settings
 - [ ] 301 redirects for any changed paths (Drupal → new URLs already handled via Nginx rewrite)
