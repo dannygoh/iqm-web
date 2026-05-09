@@ -299,15 +299,19 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 
 ### Phase 6 — VPS Deployment (Staging)
 - [x] `nginx.conf` — production-grade (HTTP→HTTPS redirect, TLS 1.2/1.3, security headers, gzip, static asset caching, Drupal URL rewrite)
-- [x] `Dockerfile` — multi-stage build, dummy build-args for Payload/DB, `standalone` output
+- [x] `Dockerfile` — multi-stage build with full node_modules (NOT standalone — Payload v3 admin is incompatible with Next.js standalone bundling)
 - [x] `docker-compose.prod.yml` — binds app to 127.0.0.1:3000 (Nginx proxy only), healthchecks, log rotation
 - [x] `.github/workflows/deploy.yml` — build → GHCR → SSH deploy; staging on `main` push, production via manual dispatch
 - [x] `scripts/vps-setup.sh` — automated Debian 13 provisioning (Docker, Nginx, Certbot, ufw)
 - [x] `scripts/deploy-runbook.md` — step-by-step: SSL cert, secrets, first deploy, smoke-test checklist, cutover
-- [ ] Run `vps-setup.sh` on live VPS (operational — needs live server)
-- [ ] Trigger first deploy via GitHub Actions (operational — needs live server + secrets)
-- [ ] Smoke test all 25 routes on `www2.iqm.org.my` (operational)
-- [ ] Share with client for approval (operational)
+- [x] VPS provisioned, SSL cert installed for `www2.iqm.org.my`
+- [x] All GitHub Actions secrets set, CI/CD pipeline working
+- [x] First admin user created via `scripts/create-admin.ts`
+- [x] Admin login working at `https://www2.iqm.org.my/admin`
+- [x] All 28 smoke test checks passing
+- [x] Key Payload v3 fixes: admin layout.tsx with RootLayout + serverFunctions.ts ('use server'), no standalone mode, Next.js 15.4.11
+- [ ] Seed directory data: `npm run migrate` (run once, needs `db-export.sql.gz` on VPS)
+- [ ] Share `www2.iqm.org.my` with client for approval
 
 ### Phase 7 — Production Cutover
 - [x] `nginx-production.conf` — `www.iqm.org.my` + bare `iqm.org.my` redirect, HSTS includeSubDomains, all security headers
