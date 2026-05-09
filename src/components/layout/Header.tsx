@@ -57,14 +57,16 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-primary shadow-md">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/images/iqm_logo.png"
-            alt="IQM Logo"
-            width={48}
-            height={48}
-            className="h-10 w-auto mix-blend-screen"
-            priority
-          />
+          <div className="bg-white rounded overflow-hidden flex-shrink-0 shadow-sm">
+            <Image
+              src="/images/iqm_logo.png"
+              alt="IQM Logo"
+              width={60}
+              height={40}
+              className="h-10 w-auto block"
+              priority
+            />
+          </div>
           <span className="text-white font-display text-base leading-tight hidden sm:block">
             Institute of Quality Malaysia
           </span>
