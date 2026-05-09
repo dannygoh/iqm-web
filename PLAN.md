@@ -310,7 +310,7 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 - [x] Admin login working at `https://www2.iqm.org.my/admin`
 - [x] All 28 smoke test checks passing
 - [x] Key Payload v3 fixes: admin layout.tsx with RootLayout + serverFunctions.ts ('use server'), no standalone mode, Next.js 15.4.11
-- [ ] Seed directory data: `npm run migrate` (run once, needs `db-export.sql.gz` on VPS)
+- [x] Seed directory data: 759 members, 182 auditors, 122 consultants seeded via migration container
 - [ ] Share `www2.iqm.org.my` with client for approval
 
 ### Phase 7 — Production Cutover
