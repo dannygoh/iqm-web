@@ -1,3 +1,7 @@
+/* Root globals — applies to ALL routes including /admin.
+   Keep this minimal: only Tailwind base + font variables.
+   IQM colour overrides live in (site)/site.css so they don't bleed into the Payload admin. */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -5,20 +9,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* IQM brand fonts */
+  /* Font wiring only — no IQM colour tokens here */
   --font-sans: var(--font-inter);
-  --font-display: var(--font-display);
+  --font-heading: var(--font-sans);
 
-  /* IQM Colour Palette */
-  --color-primary:       #0f2b5b;
-  --color-primary-light: #1a3f7a;
-  --color-accent:        #c9922a;
-  --color-accent-light:  #f0b84a;
-  --color-surface:       #f8f9fc;
-  --color-muted:         #6b7280;
-  --color-border:        #e5e7eb;
-
-  /* Wire IQM colors into shadcn tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -27,6 +21,8 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   --color-destructive: var(--destructive);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -37,31 +33,26 @@
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
+/* Shadcn defaults — neutral, works for the Payload admin */
 :root {
-  /* shadcn base */
   --background: #ffffff;
   --foreground: #111827;
   --card: #ffffff;
   --card-foreground: #111827;
   --popover: #ffffff;
   --popover-foreground: #111827;
-
-  /* Map IQM navy → shadcn primary */
-  --primary: #0f2b5b;
-  --primary-foreground: #ffffff;
-
-  /* Map IQM gold → shadcn accent */
-  --accent: #c9922a;
-  --accent-foreground: #ffffff;
-
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f2b5b;
-  --muted: #f8f9fc;
-  --muted-foreground: #6b7280;
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #1a3f7a;
+  --ring: oklch(0.708 0 0);
   --radius: 0.5rem;
 }
 
@@ -71,10 +62,5 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans, Arial, sans-serif);
   }
-}
-
-.font-display {
-  font-family: var(--font-display, Georgia, serif);
 }

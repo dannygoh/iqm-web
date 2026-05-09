@@ -1,0 +1,38 @@
+/* IQM site-specific overrides — only loaded for (site) routes, NOT the Payload /admin. */
+
+@theme inline {
+  /* IQM Colour Palette */
+  --color-primary:       #0f2b5b;
+  --color-primary-light: #1a3f7a;
+  --color-accent:        #c9922a;
+  --color-accent-light:  #f0b84a;
+  --color-surface:       #f8f9fc;
+  --color-muted:         #6b7280;
+  --color-border:        #e5e7eb;
+}
+
+:root {
+  /* Override shadcn tokens with IQM palette */
+  --primary:          #0f2b5b;
+  --primary-foreground: #ffffff;
+  --accent:           #c9922a;
+  --accent-foreground: #ffffff;
+  --secondary:        #f1f5f9;
+  --secondary-foreground: #0f2b5b;
+  --muted:            #f8f9fc;
+  --muted-foreground: #6b7280;
+  --background:       #ffffff;
+  --foreground:       #111827;
+  --border:           #e5e7eb;
+  --input:            #e5e7eb;
+  --ring:             #1a3f7a;
+}
+
+body {
+  font-family: var(--font-sans, Arial, sans-serif);
+  background: var(--color-surface, #f8f9fc);
+}
+
+.font-display {
+  font-family: var(--font-display, Georgia, serif);
+}
