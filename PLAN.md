@@ -325,12 +325,18 @@ All existing Drupal URLs preserved 1:1 to protect existing bookmarks and Google 
 - [ ] Monitor `watch-logs.sh` for 24h post-launch (operational)
 
 ### Phase 8 — Polish & SEO
-- [ ] `next/metadata` on all pages (title, description, Open Graph)
-- [ ] `next-sitemap` configuration + submit to Google Search Console
-- [ ] 301 redirects for any changed paths
-- [ ] Lighthouse audit — target 90+ all metrics
-- [ ] Accessibility audit (keyboard nav, contrast ratios, aria labels)
-- [ ] Final performance pass (image optimization, font preloading)
+- [x] `next/metadata` on all 21 pages — title, description, Open Graph, Twitter card, metadataBase
+- [x] `src/lib/metadata.ts` — shared `pageMetadata()` helper and `BASE_METADATA` base
+- [x] Site layout exports title template `'%s | Institute of Quality Malaysia'`
+- [x] `next-sitemap` — generates `sitemap.xml` + `robots.txt` on every build (postbuild script)
+- [x] `robots.txt` — disallows `/admin` and `/api`; all site pages indexed
+- [x] Admin logo blend — `mix-blend-mode: screen` so logo sits cleanly on navy header
+- [x] `sharp` installed — Media collection image resizing now works
+- [x] Payload email adapter — `@payloadcms/email-nodemailer` wired from `.env` SMTP settings
+- [ ] 301 redirects for any changed paths (Drupal → new URLs already handled via Nginx rewrite)
+- [ ] Submit `sitemap.xml` to Google Search Console after production cutover
+- [ ] Lighthouse audit (run manually post-launch — target 90+)
+- [ ] Accessibility audit (manual test)
 
 ---
 
