@@ -1,4 +1,6 @@
 'use server'
+import config from '@payload-config'
 import { handleServerFunctions } from '@payloadcms/next/layouts'
 
-export const serverFn = handleServerFunctions
+export const serverFn: typeof handleServerFunctions = (args) =>
+  handleServerFunctions({ ...args, config })
