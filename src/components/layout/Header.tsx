@@ -54,20 +54,18 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-primary shadow-md">
+    <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-3">
-          <div className="bg-white rounded overflow-hidden flex-shrink-0 shadow-sm">
-            <Image
-              src="/images/iqm_logo.png"
-              alt="IQM Logo"
-              width={60}
-              height={40}
-              className="h-10 w-auto block"
-              priority
-            />
-          </div>
-          <span className="text-white font-display text-base leading-tight hidden sm:block">
+          <Image
+            src="/images/iqm_logo.png"
+            alt="IQM Logo"
+            width={60}
+            height={40}
+            className="h-10 w-auto block"
+            priority
+          />
+          <span className="text-primary font-display text-base leading-tight hidden sm:block">
             Institute of Quality Malaysia
           </span>
         </Link>
@@ -78,7 +76,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/90 hover:text-gold text-sm font-medium px-3 py-2 rounded transition-colors"
+              className="text-foreground/70 hover:text-primary text-sm font-medium px-3 py-2 rounded transition-colors"
             >
               {link.label}
             </Link>
@@ -87,7 +85,7 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-foreground p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation"
         >
@@ -103,12 +101,12 @@ export function Header() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <nav className="lg:hidden bg-primary/80 px-4 pb-4">
+        <nav className="lg:hidden bg-background px-4 pb-4">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block text-white/90 hover:text-gold text-sm font-medium py-2 border-b border-white/10"
+              className="block text-foreground/70 hover:text-primary text-sm font-medium py-2 border-b border-border"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
