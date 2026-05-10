@@ -102,8 +102,8 @@ export function DirectoryTable<T extends { id: number | string }>({
   function SortIcon({ col }: { col: Column<T> }) {
     if (!col.sortable) return null
     if (sortKey !== col.key) return <ChevronsUpDown className="w-3.5 h-3.5 opacity-40" />
-    if (sortDir === 'asc') return <ChevronUp className="w-3.5 h-3.5 text-accent" />
-    return <ChevronDown className="w-3.5 h-3.5 text-accent" />
+    if (sortDir === 'asc') return <ChevronUp className="w-3.5 h-3.5 text-gold" />
+    return <ChevronDown className="w-3.5 h-3.5 text-gold" />
   }
 
   return (
@@ -154,7 +154,7 @@ export function DirectoryTable<T extends { id: number | string }>({
                   key={String(col.key)}
                   className={cn(
                     'text-left px-4 py-3 font-semibold whitespace-nowrap',
-                    col.sortable && 'cursor-pointer select-none hover:bg-primary-light',
+                    col.sortable && 'cursor-pointer select-none hover:bg-primary/80',
                   )}
                   onClick={() => col.sortable && toggleSort(col.key)}
                 >

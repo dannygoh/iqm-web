@@ -26,7 +26,7 @@ export default function RegistrationSchemesPage() {
         <div className="grid sm:grid-cols-2 gap-6">
           {/* Auditors Scheme */}
           <div className="bg-white border border-border rounded-lg p-6 space-y-4 hover:shadow-md transition-shadow">
-            <div className="w-10 h-1 bg-accent rounded-full" />
+            <div className="w-10 h-1 bg-gold rounded-full" />
             <h2 className="font-display text-xl text-primary font-normal">
               Quality System Auditors<br />Registration Scheme (QSARS)
             </h2>
@@ -42,7 +42,7 @@ export default function RegistrationSchemesPage() {
             </ul>
             <Link
               href="/mrca-quality-system-auditors-registration-scheme"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-semibold text-sm transition-colors"
+              className="inline-flex items-center gap-2 text-gold hover:text-gold font-semibold text-sm transition-colors"
             >
               View Auditors Scheme <ArrowRight className="w-4 h-4" />
             </Link>
@@ -50,7 +50,7 @@ export default function RegistrationSchemesPage() {
 
           {/* Consultants Scheme */}
           <div className="bg-white border border-border rounded-lg p-6 space-y-4 hover:shadow-md transition-shadow">
-            <div className="w-10 h-1 bg-accent rounded-full" />
+            <div className="w-10 h-1 bg-gold rounded-full" />
             <h2 className="font-display text-xl text-primary font-normal">
               Quality System Consultants<br />Registration Scheme (QSCRS)
             </h2>
@@ -66,7 +66,7 @@ export default function RegistrationSchemesPage() {
             </ul>
             <Link
               href="/mrca-quality-system-consultants-registration-scheme"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-semibold text-sm transition-colors"
+              className="inline-flex items-center gap-2 text-gold hover:text-gold font-semibold text-sm transition-colors"
             >
               View Consultants Scheme <ArrowRight className="w-4 h-4" />
             </Link>
@@ -78,7 +78,7 @@ export default function RegistrationSchemesPage() {
             <span className="font-semibold text-primary">Note:</span> Please do not enclose cash.
             All cheques must be crossed. Application forms and supporting documents are available
             on the respective scheme pages.{' '}
-            <Link href="/download-application-forms" className="text-accent hover:text-accent-light">
+            <Link href="/download-application-forms" className="text-gold hover:text-gold">
               Download application forms →
             </Link>
           </p>

@@ -31,7 +31,7 @@ export function DocumentList({ documents, className }: DocumentListProps) {
             href={doc.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:text-gold transition-colors"
           >
             <FileDown className="w-4 h-4" />
             Download

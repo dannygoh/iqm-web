@@ -41,7 +41,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-primary text-white py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-block bg-accent/20 border border-accent/40 text-accent-light text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+          <div className="inline-block bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
             Promoting Quality Excellence Since 1984
           </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight">
@@ -54,7 +54,7 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/types-membership"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold px-6 py-3 rounded-md transition-colors"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-gold-foreground font-semibold px-6 py-3 rounded-md transition-colors"
             >
               Become a Member
               <ArrowRight className="w-4 h-4" />
@@ -80,10 +80,10 @@ export default function HomePage() {
               <Link
                 key={href}
                 href={href}
-                className="bg-white border border-border rounded-lg p-6 hover:shadow-md hover:border-accent/40 transition-all group"
+                className="bg-white border border-border rounded-lg p-6 hover:shadow-md hover:border-gold/40 transition-all group"
               >
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
-                  <Icon className="w-5 h-5 text-primary group-hover:text-accent transition-colors" />
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
+                  <Icon className="w-5 h-5 text-primary group-hover:text-gold transition-colors" />
                 </div>
                 <h3 className="font-semibold text-primary text-sm mb-1">{title}</h3>
                 <p className="text-muted text-xs leading-relaxed">{desc}</p>
@@ -97,7 +97,7 @@ export default function HomePage() {
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="w-12 h-1 bg-accent rounded-full mb-5" />
+            <div className="w-12 h-1 bg-gold rounded-full mb-5" />
             <h2 className="font-display text-3xl text-primary font-normal mb-5">
               Who We Are
             </h2>
@@ -112,7 +112,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-semibold text-sm transition-colors"
+              className="inline-flex items-center gap-2 text-gold hover:text-gold font-semibold text-sm transition-colors"
             >
               Learn more about IQM <ArrowRight className="w-4 h-4" />
             </Link>
@@ -128,7 +128,7 @@ export default function HomePage() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="flex items-center justify-between text-white/80 hover:text-accent-light transition-colors group"
+                    className="flex items-center justify-between text-white/80 hover:text-gold transition-colors group"
                   >
                     <span className="text-sm font-medium">{label}</span>
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />

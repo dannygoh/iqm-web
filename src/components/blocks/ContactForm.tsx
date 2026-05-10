@@ -105,7 +105,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={status === 'sending'}
-        className="bg-primary hover:bg-primary-light text-white w-full sm:w-auto"
+        className="bg-primary hover:bg-primary/80 text-white w-full sm:w-auto"
       >
         {status === 'sending' ? 'Sending…' : 'Send Message'}
       </Button>

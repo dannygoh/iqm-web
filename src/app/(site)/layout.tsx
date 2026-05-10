@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { DM_Serif_Display, Inter } from 'next/font/google'
+import { Instrument_Serif, Inter } from 'next/font/google'
 import { BASE_METADATA } from '@/lib/metadata'
 import { cn } from '@/lib/utils'
 import { Header } from '@/components/layout/Header'
@@ -23,7 +23,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-const dmSerifDisplay = DM_Serif_Display({
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-display',
@@ -34,7 +34,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={cn(inter.variable, dmSerifDisplay.variable, 'h-full antialiased')}
+      className={cn(inter.variable, instrumentSerif.variable, 'h-full antialiased')}
     >
       <body className="min-h-full flex flex-col">
         <Header />

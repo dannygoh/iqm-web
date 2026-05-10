@@ -33,7 +33,7 @@ export default function RulesPage() {
             href="/files/circulars/Rule-8-Code-of-Conduct-2012-11-24.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-semibold px-4 py-2 rounded-md transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-gold-foreground text-sm font-semibold px-4 py-2 rounded-md transition-colors"
           >
             <Download className="w-4 h-4" />
             Download PDF
@@ -51,7 +51,7 @@ export default function RulesPage() {
             href="/files/circulars/Rule-8-Code-of-Conduct-2012-11-24.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-semibold px-4 py-2 rounded-md transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-gold-foreground text-sm font-semibold px-4 py-2 rounded-md transition-colors"
           >
             <Download className="w-4 h-4" />
             Download PDF

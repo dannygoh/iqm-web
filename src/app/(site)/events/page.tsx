@@ -61,7 +61,7 @@ export default async function EventsPage() {
             {events.map((event) => (
               <article key={event.id} className="bg-white border border-border rounded-lg p-6">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-                  <div className="flex-shrink-0 bg-accent text-white rounded-md px-4 py-3 text-center min-w-[60px]">
+                  <div className="flex-shrink-0 bg-gold text-gold-foreground rounded-md px-4 py-3 text-center min-w-[60px]">
                     <span className="text-lg font-bold leading-none block">
                       {new Date(event.date).getDate()}
                     </span>

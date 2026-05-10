@@ -45,7 +45,7 @@ export default function AimsPage() {
         <ol className="space-y-6">
           {AIMS.map(({ n, text }) => (
             <li key={n} className="flex gap-5">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white text-sm font-bold flex items-center justify-center">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold text-gold-foreground text-sm font-bold flex items-center justify-center">
                 {n}
               </span>
               <p className="text-foreground/80 leading-relaxed pt-1">{text}</p>

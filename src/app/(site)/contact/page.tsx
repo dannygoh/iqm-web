@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-primary text-sm mb-0.5">Phone</p>
-                  <a href="tel:+60" className="text-foreground/70 text-sm hover:text-accent transition-colors">
+                  <a href="tel:+60" className="text-foreground/70 text-sm hover:text-gold transition-colors">
                     Please contact via email
                   </a>
                 </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   <p className="font-semibold text-primary text-sm mb-0.5">Email</p>
                   <a
                     href="mailto:contact@iqm.org.my"
-                    className="text-foreground/70 text-sm hover:text-accent transition-colors"
+                    className="text-foreground/70 text-sm hover:text-gold transition-colors"
                   >
                     contact@iqm.org.my
                   </a>

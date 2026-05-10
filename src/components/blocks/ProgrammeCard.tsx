@@ -35,7 +35,7 @@ export function ProgrammeCard({
           href={downloadUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors"
+          className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-gold transition-colors"
         >
           <Download className="w-4 h-4" />
           {downloadLabel}

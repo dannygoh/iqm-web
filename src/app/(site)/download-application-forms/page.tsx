@@ -77,7 +77,7 @@ export default function DownloadFormsPage() {
           <h2 className="font-display text-xl text-primary font-normal mb-1">Membership Application Forms</h2>
           <p className="text-muted text-sm mb-5">
             For joining IQM as an Individual or Company member.{' '}
-            <Link href="/types-membership" className="text-accent hover:text-accent-light">
+            <Link href="/types-membership" className="text-gold hover:text-gold">
               Check which membership type is right for you.
             </Link>
           </p>
@@ -89,7 +89,7 @@ export default function DownloadFormsPage() {
           <p className="text-muted text-sm mb-5">
             For registering as a certified quality auditor or consultant under the Malaysian Register
             of Certified Auditors (MRCA) scheme.{' '}
-            <Link href="/registration-schemes" className="text-accent hover:text-accent-light">
+            <Link href="/registration-schemes" className="text-gold hover:text-gold">
               Learn about the MRCA schemes.
             </Link>
           </p>
@@ -103,7 +103,7 @@ export default function DownloadFormsPage() {
             <strong className="text-foreground">"Institute of Quality M'sia (MRCA-Program)"</strong>.
           </p>
           <p className="text-sm text-muted mt-2">
-            For enquiries: <Link href="/contact" className="text-accent hover:text-accent-light inline-flex items-center gap-1">Contact us <ArrowRight className="w-3 h-3" /></Link>
+            For enquiries: <Link href="/contact" className="text-gold hover:text-gold inline-flex items-center gap-1">Contact us <ArrowRight className="w-3 h-3" /></Link>
           </p>
         </div>
       </div>

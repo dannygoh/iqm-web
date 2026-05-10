@@ -22,7 +22,7 @@ export default function TypesMembershipPage() {
         {/* Individual Corporate */}
         <section>
           <h2 className="font-display text-2xl text-primary font-normal mb-2">Individual Membership</h2>
-          <div className="w-12 h-1 bg-accent rounded-full mb-6" />
+          <div className="w-12 h-1 bg-gold rounded-full mb-6" />
 
           <h3 className="text-sm font-semibold uppercase tracking-widest text-muted mb-4">Corporate Members</h3>
           <div className="grid sm:grid-cols-3 gap-5 mb-8">
@@ -77,7 +77,7 @@ export default function TypesMembershipPage() {
         {/* Company Membership */}
         <section>
           <h2 className="font-display text-2xl text-primary font-normal mb-2">Company Membership</h2>
-          <div className="w-12 h-1 bg-accent rounded-full mb-6" />
+          <div className="w-12 h-1 bg-gold rounded-full mb-6" />
           <p className="text-foreground/80 leading-relaxed mb-4">
             Company Membership is open to any Institutes, Companies, or Government Departments
             that wish to support the aims of IQM and benefit from membership activities. Company
@@ -86,7 +86,7 @@ export default function TypesMembershipPage() {
           </p>
           <Link
             href="/corporate-membership"
-            className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-semibold text-sm transition-colors"
+            className="inline-flex items-center gap-2 text-gold hover:text-gold font-semibold text-sm transition-colors"
           >
             More about Corporate Membership <ArrowRight className="w-4 h-4" />
           </Link>
@@ -95,7 +95,7 @@ export default function TypesMembershipPage() {
         {/* Life Membership */}
         <section>
           <h2 className="font-display text-2xl text-primary font-normal mb-2">Life Membership</h2>
-          <div className="w-12 h-1 bg-accent rounded-full mb-6" />
+          <div className="w-12 h-1 bg-gold rounded-full mb-6" />
           <p className="text-foreground/80 leading-relaxed">
             Life Membership is available to qualifying Individual Members. A one-time subscription
             of RM 300.00 grants permanent membership without further annual subscription obligations.
@@ -104,7 +104,7 @@ export default function TypesMembershipPage() {
 
         <div className="border-t border-border pt-8 flex flex-wrap gap-4">
           <Link href="/entrance-fee-and-annual-subscriptions"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
             View Fee Schedule <ArrowRight className="w-4 h-4" />
           </Link>
           <Link href="/download-application-forms"

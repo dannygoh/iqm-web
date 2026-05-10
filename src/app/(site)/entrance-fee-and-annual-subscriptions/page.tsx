@@ -41,7 +41,7 @@ export default function FeesPage() {
 
         <div className="flex flex-wrap gap-4">
           <Link href="/download-application-forms"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
             Download Application Form <ArrowRight className="w-4 h-4" />
           </Link>
           <Link href="/types-membership"

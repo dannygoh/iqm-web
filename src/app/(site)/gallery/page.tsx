@@ -90,7 +90,7 @@ export default async function GalleryPage() {
                   )}
                 </div>
                 <div className="p-4">
-                  <h2 className="font-semibold text-primary text-sm group-hover:text-accent transition-colors">
+                  <h2 className="font-semibold text-primary text-sm group-hover:text-gold transition-colors">
                     {album.title}
                   </h2>
                   {album.description && (

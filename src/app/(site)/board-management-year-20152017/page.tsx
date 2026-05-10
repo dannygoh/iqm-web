@@ -53,7 +53,7 @@ export default function BoardPage() {
       <div className="max-w-5xl mx-auto px-6 py-12 space-y-10">
         {Object.entries(BOARD).map(([role, members]) => (
           <section key={role}>
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-accent mb-4 border-b border-border pb-2">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-gold mb-4 border-b border-border pb-2">
               {role}
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">

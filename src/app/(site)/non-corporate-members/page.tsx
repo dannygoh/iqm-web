@@ -45,7 +45,7 @@ export default function NonCorporatePage() {
 
         <div className="border-t border-border pt-8 flex flex-wrap gap-4">
           <Link href="/entrance-fee-and-annual-subscriptions"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
             View Fee Schedule <ArrowRight className="w-4 h-4" />
           </Link>
           <Link href="/download-application-forms"

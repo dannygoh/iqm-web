@@ -44,7 +44,7 @@ export default function MembersBenefitPage() {
           <ul className="space-y-3">
             {BENEFITS.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
                 <span className="text-foreground/80 text-sm leading-relaxed">{benefit}</span>
               </li>
             ))}
@@ -53,14 +53,14 @@ export default function MembersBenefitPage() {
 
         <div className="flex flex-wrap gap-4">
           <Link href="/types-membership"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white font-semibold px-5 py-2.5 rounded-md transition-colors text-sm">
             View Membership Types
           </Link>
           <a
             href="/files/IQM-Members-Benefits.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-accent text-accent hover:bg-accent/5 font-semibold px-5 py-2.5 rounded-md transition-colors text-sm"
+            className="inline-flex items-center gap-2 border border-gold text-gold hover:bg-gold/5 font-semibold px-5 py-2.5 rounded-md transition-colors text-sm"
           >
             <Download className="w-4 h-4" />
             Download Full Benefits PDF

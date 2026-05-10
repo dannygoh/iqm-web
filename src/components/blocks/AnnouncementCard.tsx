@@ -32,7 +32,7 @@ export function AnnouncementCard({
   return (
     <article className={cn('bg-white border border-border rounded-lg p-6 flex gap-5', className)}>
       {/* Date badge */}
-      <div className="flex-shrink-0 flex flex-col items-center justify-start bg-accent text-white rounded-md w-14 h-16 pt-2">
+      <div className="flex-shrink-0 flex flex-col items-center justify-start bg-gold text-gold-foreground rounded-md w-14 h-16 pt-2">
         <span className="text-xl font-bold leading-none">{day}</span>
         <span className="text-xs uppercase tracking-wide mt-0.5">
           {new Date(date).toLocaleDateString('en-MY', { month: 'short' })}
@@ -54,7 +54,7 @@ export function AnnouncementCard({
                 href={att.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-light font-medium transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-gold hover:text-gold font-medium transition-colors"
               >
                 <FileText className="w-3.5 h-3.5" />
                 {att.label || 'Download'}

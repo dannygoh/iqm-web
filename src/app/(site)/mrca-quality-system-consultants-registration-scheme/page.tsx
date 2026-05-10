@@ -84,7 +84,7 @@ export default function ConsultantsScheme() {
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-5">
           <p className="text-sm text-foreground/75 leading-relaxed">
             For further enquiries about the QSCRS, please{' '}
-            <a href="/contact" className="text-accent hover:text-accent-light font-medium">
+            <a href="/contact" className="text-gold hover:text-gold font-medium">
               contact the IQM secretariat
             </a>{' '}
             or refer to the MRCA 002 document for full registration criteria.

@@ -42,7 +42,7 @@ export function GalleryGrid({ images }: GalleryGridProps) {
           <button
             key={i}
             onClick={() => setLightboxIndex(i)}
-            className="relative aspect-square overflow-hidden rounded-lg bg-surface hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent"
+            className="relative aspect-square overflow-hidden rounded-lg bg-surface hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-gold"
           >
             <Image
               src={img.url}

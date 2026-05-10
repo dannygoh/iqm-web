@@ -53,7 +53,7 @@ export default function AboutPage() {
               },
             ].map(({ title, body }) => (
               <div key={title} className="bg-surface rounded-lg p-5 border border-border">
-                <div className="w-8 h-1 bg-accent mb-3 rounded-full" />
+                <div className="w-8 h-1 bg-gold mb-3 rounded-full" />
                 <h3 className="font-semibold text-primary">{title}</h3>
                 <p className="mt-1 text-sm text-foreground/70 leading-relaxed">{body}</p>
               </div>
