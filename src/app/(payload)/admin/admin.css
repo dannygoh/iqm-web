@@ -15,4 +15,8 @@
   --border:             oklch(0.922 0 0);
   --input:              oklch(0.922 0 0);
   --ring:               oklch(0.708 0 0);
+  --gold:               unset;
+  --gold-foreground:    unset;
+  --ink:                unset;
+  --cream:              unset;
 }
