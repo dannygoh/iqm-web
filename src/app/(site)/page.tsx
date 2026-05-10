@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { pageMetadata } from '@/lib/metadata'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Users, ClipboardList, BookOpen, Phone } from 'lucide-react'
 
 export const metadata: Metadata = pageMetadata(
@@ -39,38 +40,74 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-primary text-white py-24 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-block bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-            Promoting Quality Excellence Since 1984
+      <section className="relative isolate overflow-hidden">
+        {/* Background: KL skyline + gradient layers */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/hero-towers.jpg"
+            alt="Petronas Twin Towers, Kuala Lumpur"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-hero" />
+          <div className="absolute inset-0 bg-primary/55" />
+        </div>
+
+        {/* Main content */}
+        <div className="container-prose relative grid min-h-[88vh] grid-cols-1 items-center py-24 text-primary-foreground">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-gold">
+              <span className="h-px w-10 bg-gold" />
+              Est. 1989 · Kuala Lumpur
+            </div>
+            <h1 className="mt-6 font-display text-balance text-5xl leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl">
+              Quality<span className="italic text-gold"> in Unity.</span>
+              <br />Standards <span className="italic">in Practice.</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-lg text-primary-foreground/80">
+              The Institute of Quality Malaysia advances the nation&apos;s quality profession —
+              collaborating with SIRIM, Department of Standards Malaysia, MAMPU, NPC and global
+              bodies to set the benchmark for excellence.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/types-membership"
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-medium text-gold-foreground hover:opacity-90 transition"
+              >
+                Become a Member <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/10 transition"
+              >
+                About the Institute
+              </Link>
+            </div>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight">
-            Institute of Quality Malaysia
-          </h1>
-          <p className="text-lg text-white/75 max-w-2xl mx-auto leading-relaxed mb-10">
-            A professional membership body dedicated to advancing quality culture,
-            certifying practitioners, and connecting quality professionals across Malaysia.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/types-membership"
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-gold-foreground font-semibold px-6 py-3 rounded-md transition-colors"
-            >
-              Become a Member
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/registration-schemes"
-              className="inline-flex items-center gap-2 border border-white/40 hover:border-white text-white font-semibold px-6 py-3 rounded-md transition-colors"
-            >
-              MRCA Registration
-            </Link>
+        </div>
+
+        {/* Stats bar */}
+        <div className="relative border-t border-primary-foreground/15 bg-primary/40 backdrop-blur">
+          <div className="container-prose grid grid-cols-2 gap-px sm:grid-cols-4">
+            {[
+              { value: '35+',   label: 'Years advancing quality' },
+              { value: '1000s', label: 'Certified members' },
+              { value: '10+',   label: 'National partnerships' },
+              { value: '32',    label: 'COSTAM affiliates' },
+            ].map(({ value, label }) => (
+              <div key={label} className="px-4 py-6 text-primary-foreground">
+                <div className="font-display text-3xl text-gold">{value}</div>
+                <div className="mt-1 text-xs uppercase tracking-widest text-primary-foreground/70">{label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Quick links */}
-      <section className="bg-surface py-16 px-6">
+      <section className="bg-secondary py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-2xl text-primary text-center mb-10">
             What We Offer
